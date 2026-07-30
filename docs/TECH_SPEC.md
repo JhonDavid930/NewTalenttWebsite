@@ -61,7 +61,9 @@ La sintaxis y configuración se contrastaron con documentación actual de Next.j
 - `robots.ts`, `sitemap.ts` y `manifest.ts`.
 - Headings secuenciales, landmarks y HTML semántico.
 
-`NEXT_PUBLIC_SITE_URL` debe contener la URL pública final para generar canonical, sitemap y Schema.org correctos.
+`SITE_URL` debe contener exclusivamente el origin HTTPS público para generar canonical, sitemap y
+Schema.org correctos. La variable se valida durante el build y nunca se lee desde el Client
+Component.
 
 ## 7. Performance
 
@@ -95,6 +97,20 @@ Cabeceras:
 - `Referrer-Policy: strict-origin-when-cross-origin`.
 - Permissions Policy restrictiva.
 - Cross-Origin Opener Policy.
+- HSTS con preload.
+- CSP reforzada con bloqueo de objects, frames y manifests externos.
+- Overrides auditados para mantener PostCSS, Sharp y dependencias del toolchain en versiones corregidas.
+
+## 10. CI/CD
+
+GitHub Actions ejecuta sobre Node.js 24:
+
+- instalación reproducible con `npm ci`;
+- typecheck, lint, unit tests y production build;
+- `npm audit --omit=dev` con bloqueo desde severidad alta sobre el dependency graph desplegable.
+
+Vercel debe conservar los comandos detectados para Next.js y definir `SITE_URL` tanto en Preview
+como en Production.
 
 Reglas futuras:
 
@@ -104,7 +120,7 @@ Reglas futuras:
 - Usar HTTPS en producción.
 - Si aparece persistencia, diseñar RLS y autorización antes de crear tablas.
 
-## 10. Claims y atribución
+## 11. Claims y atribución
 
 - BeFocus Music: crecimiento aproximado desde 500 a más de 140K suscriptores en aproximadamente 18 meses.
 - Las Ganas: contribución de estrategia y lanzamiento a un release certificado por RIAA.

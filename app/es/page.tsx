@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/site-page";
 import { spanishContent } from "@/content/site-content";
+import { siteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "Estrategia musical, Growth y Tecnología",
@@ -25,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function SpanishPage() {
-  return <SitePage content={spanishContent} locale="es" />;
+  return <SitePage content={spanishContent} locale="es" siteUrl={siteUrl} />;
 }
