@@ -459,8 +459,11 @@ export function SitePage({ content, locale, siteUrl }: SitePageProps) {
         >
           <div className="shell insights-grid">
             <div className="insights-handle" aria-hidden="true">
-              <span>@</span>
-              <strong>newtalent.t</strong>
+              <span className="insights-platform">Instagram / Insights</span>
+              <strong>
+                <span>@</span>
+                newtalent.t
+              </strong>
             </div>
             <Reveal className="insights-copy">
               <SectionLabel>{content.insights.eyebrow}</SectionLabel>

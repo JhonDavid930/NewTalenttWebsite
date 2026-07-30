@@ -12,6 +12,8 @@ Todos los cambios relevantes de NewTalentt Website se documentan aquí siguiendo
 
 ### Changed
 
+- Se rediseñó la pieza de Instagram/Insights como un lockup editorial
+  `@newtalent.t`, sin solapamientos ni elementos decorativos innecesarios.
 - Se reforzó la identidad cromática oficial: `#0C0F18` pasa a ser el fondo principal y `#013650` adquiere presencia estructural en Proof, Capabilities, Insights, la pieza institucional y el Footer.
 - El coral queda reservado como acento de acción y contraste.
 - Se fijó el runtime en Node.js 24 y se alinearon los tipos.
