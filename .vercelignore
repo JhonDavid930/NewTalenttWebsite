@@ -1,0 +1,8 @@
+.git
+.playwright-cli
+.next
+assets/brand-source
+design-system
+docs
+output
+*.log
