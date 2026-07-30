@@ -22,8 +22,9 @@ npm run quality
 npm run security:audit
 ```
 
-Todos los comandos deben terminar sin errores y la auditoría de Production debe indicar cero
-vulnerabilidades. El toolchain fija además los backports de seguridad compatibles usados por lint.
+Todos los comandos deben terminar sin errores y la auditoría completa debe indicar cero
+vulnerabilidades. El toolchain usa versiones estables y compatibles de ESLint, TypeScript ESLint,
+Next.js Core Web Vitals y React Hooks.
 
 ## 2. Preparar la URL pública
 

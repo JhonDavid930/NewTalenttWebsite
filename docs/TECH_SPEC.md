@@ -107,7 +107,7 @@ GitHub Actions ejecuta sobre Node.js 24:
 
 - instalación reproducible con `npm ci`;
 - typecheck, lint, unit tests y production build;
-- `npm audit --omit=dev` con bloqueo desde severidad alta sobre el dependency graph desplegable.
+- `npm audit` con bloqueo desde severidad alta sobre el dependency graph completo.
 
 Vercel debe conservar los comandos detectados para Next.js y definir `SITE_URL` tanto en Preview
 como en Production.

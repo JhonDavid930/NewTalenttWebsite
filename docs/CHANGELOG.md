@@ -20,7 +20,12 @@ Todos los cambios relevantes de NewTalentt Website se documentan aquí siguiendo
 
 ### Security
 
-- El dependency graph de Production pasa `npm audit` con cero vulnerabilidades.
+- El dependency graph completo, incluyendo el toolchain de desarrollo, pasa
+  `npm audit` con cero vulnerabilidades.
+- Se restauró el bloqueo preventivo de todos los archivos `.env*`, manteniendo
+  únicamente `.env.example` como plantilla versionada.
+- Se actualizó el toolchain de lint para eliminar alertas conocidas en
+  dependencias de desarrollo sin introducir cambios incompatibles.
 
 ## [1.0.0] - 2026-07-30
 
