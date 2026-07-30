@@ -9,6 +9,7 @@ import type { Locale, SiteContent } from "@/content/site-content";
 type SitePageProps = {
   content: SiteContent;
   locale: Locale;
+  siteUrl: string;
 };
 
 const instagramUrl = "https://www.instagram.com/newtalent.t/";
@@ -178,7 +179,7 @@ function Header({
   );
 }
 
-export function SitePage({ content, locale }: SitePageProps) {
+export function SitePage({ content, locale, siteUrl }: SitePageProps) {
   const year = new Date().getFullYear();
   const schema = {
     "@context": "https://schema.org",
@@ -186,7 +187,7 @@ export function SitePage({ content, locale }: SitePageProps) {
     name: "NewTalentt",
     description:
       "Boutique Music Strategy, Growth & Technology for artists, labels and music projects.",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    url: siteUrl,
     sameAs: [instagramUrl, "https://www.youtube.com/@befocusmusic"],
     areaServed: "Worldwide",
     knowsAbout: [

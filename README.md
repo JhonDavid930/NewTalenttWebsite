@@ -4,10 +4,10 @@ V1 oficial de NewTalentt: una landing premium bilingüe para una boutique intern
 
 ## Estado
 
-- V1 local implementada.
+- V1 implementada y preparada para CI/CD.
 - Rutas disponibles: English `/` y Español `/es`.
 - Sin backend ni Base de Datos.
-- Sin Commit, Push ni Deploy realizados.
+- El Deploy requiere `SITE_URL` y todos los quality gates verdes.
 
 ## Stack
 
@@ -19,17 +19,16 @@ V1 oficial de NewTalentt: una landing premium bilingüe para una boutique intern
 
 ## Desarrollo local
 
-1. Instala Node.js 22 o superior.
-2. Instala dependencias con `npm install`.
+1. Instala Node.js 24.
+2. Instala dependencias con `npm ci`.
 3. Duplica `.env.example` como `.env.local`.
 4. Ejecuta `npm run dev`.
 5. Abre la dirección local mostrada en la terminal.
 
 ## Validación
 
-- `npm run typecheck`
-- `npm run lint`
-- `npm run build`
+- `npm run quality`
+- `npm run security:audit`
 
 ## Documentación
 

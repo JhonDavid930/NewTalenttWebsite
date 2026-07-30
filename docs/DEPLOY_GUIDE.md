@@ -17,13 +17,14 @@ No hagas Commit, Push ni Deploy hasta recibir autorización explícita.
 Abre una terminal en la carpeta del proyecto y ejecuta:
 
 ```bash
-npm install
-npm run typecheck
-npm run lint
-npm run build
+npm ci
+npm run quality
+npm run security:audit
 ```
 
-Los tres últimos comandos deben terminar sin errores.
+Todos los comandos deben terminar sin errores y la auditoría completa debe indicar cero
+vulnerabilidades. El toolchain usa versiones estables y compatibles de ESLint, TypeScript ESLint,
+Next.js Core Web Vitals y React Hooks.
 
 ## 2. Preparar la URL pública
 
@@ -34,12 +35,13 @@ En Vercel, abre:
 Crea:
 
 ```text
-NEXT_PUBLIC_SITE_URL=https://tu-dominio-real.com
+SITE_URL=https://tu-dominio-real.com
 ```
 
 Usa la URL completa con `https://` y sin barra final.
 
-Esta variable no es un secreto. Sirve para canonical, sitemap, robots y Schema.org.
+Esta variable no es un secreto. Sirve para canonical, sitemap, robots y Schema.org. El build se
+detiene automáticamente si falta, no usa HTTPS o contiene una ruta, query o fragment.
 
 ## 3. Importar el proyecto
 
@@ -49,6 +51,8 @@ Esta variable no es un secreto. Sirve para canonical, sitemap, robots y Schema.o
 4. No cambies Build Command ni Output Directory.
 5. Añade la variable del paso anterior.
 6. Pulsa `Deploy`.
+
+El proyecto fija Node.js 24 mediante `package.json` y `.nvmrc`; no cambies el runtime en Vercel.
 
 ## 4. Conectar el dominio
 
@@ -77,6 +81,7 @@ Comprueba:
 
 - Preview: cada Pull Request crea una URL temporal para revisar.
 - Production: solo la rama aprobada publica el dominio real.
+- CI: cada Pull Request y cada Push a `main` ejecutan typecheck, lint, tests, build y security audit.
 
 No pruebes cambios directamente sobre Production. Revísalos primero en Preview.
 
@@ -96,7 +101,7 @@ Esto recupera una versión anterior sin borrar el historial.
 
 - Build verde.
 - Dominio con HTTPS.
-- Variable `NEXT_PUBLIC_SITE_URL` correcta.
+- Variable `SITE_URL` correcta en Preview y Production.
 - English y Español revisados.
 - OpenGraph comprobado.
 - Responsive revisado en móvil y escritorio.

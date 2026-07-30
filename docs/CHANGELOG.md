@@ -4,10 +4,28 @@ Todos los cambios relevantes de NewTalentt Website se documentan aquí siguiendo
 
 ## [Unreleased]
 
+### Added
+
+- CI para Pull Requests y `main` con Node.js 24, instalación reproducible, quality gates y security audit.
+- Validación unitaria y fail-fast de `SITE_URL` para impedir metadata de Production apuntando a localhost.
+- HSTS y directivas CSP adicionales para objects, frames, workers y manifests.
+
 ### Changed
 
 - Se reforzó la identidad cromática oficial: `#0C0F18` pasa a ser el fondo principal y `#013650` adquiere presencia estructural en Proof, Capabilities, Insights, la pieza institucional y el Footer.
 - El coral queda reservado como acento de acción y contraste.
+- Se fijó el runtime en Node.js 24 y se alinearon los tipos.
+- La URL canónica ahora se resuelve server-side y se entrega al Client Component como Prop serializable.
+- Se actualizaron dependencias transitivas vulnerables mediante overrides auditados, sin degradar Next.js.
+
+### Security
+
+- El dependency graph completo, incluyendo el toolchain de desarrollo, pasa
+  `npm audit` con cero vulnerabilidades.
+- Se restauró el bloqueo preventivo de todos los archivos `.env*`, manteniendo
+  únicamente `.env.example` como plantilla versionada.
+- Se actualizó el toolchain de lint para eliminar alertas conocidas en
+  dependencias de desarrollo sin introducir cambios incompatibles.
 
 ## [1.0.0] - 2026-07-30
 

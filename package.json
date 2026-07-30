@@ -2,15 +2,19 @@
   "name": "newtalentt-website",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "engines": {
-    "node": ">=22.13.0"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --test lib/*.test.ts",
+    "security:audit": "npm audit --audit-level=high",
+    "quality": "npm run typecheck && npm run lint && npm test && npm run build"
   },
   "dependencies": {
     "motion": "12.43.0",
@@ -19,13 +23,23 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@next/eslint-plugin-next": "16.2.12",
     "@tailwindcss/postcss": "4.3.3",
-    "@types/node": "22.19.19",
+    "@types/node": "24.13.3",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "eslint": "9.39.4",
-    "eslint-config-next": "16.2.12",
+    "eslint": "10.8.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "16.4.0",
     "tailwindcss": "4.3.3",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.59.3"
+  },
+  "overrides": {
+    "@babel/core": "7.29.7",
+    "js-yaml": "4.3.0",
+    "postcss": "8.5.25",
+    "sharp": "0.35.3"
   }
 }
