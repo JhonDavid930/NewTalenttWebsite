@@ -945,6 +945,37 @@ a:hover .arrow {
   color: var(--paper-muted);
 }
 
+.footer-legal {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.footer-legal-item {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  font-style: normal;
+}
+
+.footer-legal-item > span {
+  color: var(--paper-muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-legal-item strong,
+.footer-legal-item p {
+  color: var(--paper);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 450;
+  line-height: 1.55;
+}
+
 .footer-bottom {
   display: grid;
   gap: 0.75rem;
@@ -1032,6 +1063,15 @@ a:hover .arrow {
   .footer-top {
     grid-template-columns: 1fr auto;
     align-items: end;
+  }
+
+  .footer-legal {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+
+  .footer-legal address {
+    text-align: right;
   }
 
   .footer-bottom {
