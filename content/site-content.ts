@@ -86,6 +86,8 @@ export type SiteContent = {
   };
   footer: {
     positioning: string;
+    legalEntity: string;
+    mailingAddress: string;
     privacy: string;
     rights: string;
   };
@@ -287,6 +289,8 @@ export const englishContent: SiteContent = {
   },
   footer: {
     positioning: "Strategy. Growth. Technology. Built for music.",
+    legalEntity: "Legal entity",
+    mailingAddress: "Mailing address",
     privacy: "Private by design.",
     rights: "NewTalentt. All rights reserved.",
   },
@@ -489,6 +493,8 @@ export const spanishContent: SiteContent = {
   },
   footer: {
     positioning: "Strategy. Growth. Technology. Built for music.",
+    legalEntity: "Entidad legal",
+    mailingAddress: "Dirección postal",
     privacy: "Privado por diseño.",
     rights: "NewTalentt. Todos los derechos reservados.",
   },

@@ -13,6 +13,14 @@ type SitePageProps = {
 };
 
 const instagramUrl = "https://www.instagram.com/newtalent.t/";
+const companyLegalName = "NEWTALENTT, LLC";
+const companyAddress = {
+  streetAddress: "7345 W Sand Lake Rd, Ste 210, Office 3744",
+  addressLocality: "Orlando",
+  addressRegion: "FL",
+  postalCode: "32819",
+  addressCountry: "US",
+};
 
 function Arrow() {
   return (
@@ -185,9 +193,14 @@ export function SitePage({ content, locale, siteUrl }: SitePageProps) {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "NewTalentt",
+    legalName: companyLegalName,
     description:
       "Boutique Music Strategy, Growth & Technology for artists, labels and music projects.",
     url: siteUrl,
+    address: {
+      "@type": "PostalAddress",
+      ...companyAddress,
+    },
     sameAs: [instagramUrl, "https://www.youtube.com/@befocusmusic"],
     areaServed: "Worldwide",
     knowsAbout: [
@@ -513,6 +526,21 @@ export function SitePage({ content, locale, siteUrl }: SitePageProps) {
             NewTalentt
           </Link>
           <p>{content.footer.positioning}</p>
+        </div>
+        <div className="shell footer-legal">
+          <div className="footer-legal-item">
+            <span>{content.footer.legalEntity}</span>
+            <strong>{companyLegalName}</strong>
+          </div>
+          <address className="footer-legal-item">
+            <span>{content.footer.mailingAddress}</span>
+            <p>
+              {companyAddress.streetAddress}
+              <br />
+              {companyAddress.addressLocality}, {companyAddress.addressRegion}{" "}
+              {companyAddress.postalCode}, United States
+            </p>
+          </address>
         </div>
         <div className="shell footer-bottom">
           <span>

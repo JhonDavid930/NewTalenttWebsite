@@ -6,6 +6,8 @@ Todos los cambios relevantes de NewTalentt Website se documentan aquí siguiendo
 
 ### Added
 
+- Identidad legal `NEWTALENTT, LLC` y dirección postal de Orlando en el Footer
+  bilingüe y en los datos estructurados Schema.org.
 - CI para Pull Requests y `main` con Node.js 24, instalación reproducible, quality gates y security audit.
 - Validación unitaria y fail-fast de `SITE_URL` para impedir metadata de Production apuntando a localhost.
 - HSTS y directivas CSP adicionales para objects, frames, workers y manifests.
