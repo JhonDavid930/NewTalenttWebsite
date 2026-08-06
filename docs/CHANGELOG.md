@@ -6,6 +6,11 @@ Todos los cambios relevantes de NewTalentt Website se documentan aquí siguiendo
 
 ### Added
 
+- CTA flotante bilingüe hacia el formulario de proyectos, visible únicamente después
+  de que la persona haya recorrido una parte significativa de la página y oculto al
+  entrar en la sección oficial de solicitud para evitar acciones duplicadas.
+- Nueva área bilingüe de solicitud privada de proyectos con criterios de encaje,
+  inversión mínima de campaña desde $570 USD y acceso directo al Google Form.
 - Identidad legal `NEWTALENTT, LLC` y dirección postal de Orlando en el Footer
   bilingüe y en los datos estructurados Schema.org.
 - CI para Pull Requests y `main` con Node.js 24, instalación reproducible, quality gates y security audit.
@@ -24,6 +29,8 @@ Todos los cambios relevantes de NewTalentt Website se documentan aquí siguiendo
 
 ### Security
 
+- Se actualizó `brace-expansion` a su versión corregida para resolver
+  `GHSA-rgw5-rvv9-x895`; el dependency graph vuelve a tener cero vulnerabilidades.
 - El dependency graph completo, incluyendo el toolchain de desarrollo, pasa
   `npm audit` con cero vulnerabilidades.
 - Se restauró el bloqueo preventivo de todos los archivos `.env*`, manteniendo

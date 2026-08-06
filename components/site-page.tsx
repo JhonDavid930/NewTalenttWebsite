@@ -13,6 +13,8 @@ type SitePageProps = {
 };
 
 const instagramUrl = "https://www.instagram.com/newtalent.t/";
+const projectIntakeUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeFQmmgQnE1i_dSNYCvs4il3blay5u0TDO0d_ic8KJ8q5OaPA/viewform";
 const companyLegalName = "NEWTALENTT, LLC";
 const companyAddress = {
   streetAddress: "7345 W Sand Lake Rd, Ste 210, Office 3744",
@@ -70,6 +72,8 @@ function Header({
   locale: Locale;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [showProjectShortcut, setShowProjectShortcut] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
   const alternateHref = locale === "en" ? "/es" : "/";
   const alternateLabel = locale === "en" ? "ES" : "EN";
 
@@ -91,6 +95,25 @@ function Header({
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [isOpen]);
+
+  useEffect(() => {
+    const updateProjectShortcut = () => {
+      const revealPoint = Math.max(560, window.innerHeight * 0.85);
+      const contactSection = document.getElementById("contact");
+      const hasReachedContact = contactSection
+        ? window.scrollY + window.innerHeight >= contactSection.offsetTop + 80
+        : false;
+
+      setShowProjectShortcut(
+        window.scrollY >= revealPoint && !hasReachedContact,
+      );
+    };
+
+    updateProjectShortcut();
+    window.addEventListener("scroll", updateProjectShortcut, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateProjectShortcut);
+  }, []);
 
   const navItems = [
     { href: "#approach", label: content.nav.approach },
@@ -181,6 +204,28 @@ function Header({
               </a>
             </div>
           </motion.nav>
+        ) : null}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {showProjectShortcut ? (
+          <motion.a
+            className="project-shortcut"
+            href={projectIntakeUrl}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0 }
+                : { duration: 0.22, ease: [0.22, 1, 0.36, 1] }
+            }
+          >
+            {content.contact.cta}
+            <Arrow />
+          </motion.a>
         ) : null}
       </AnimatePresence>
     </header>
@@ -501,20 +546,48 @@ export function SitePage({ content, locale, siteUrl }: SitePageProps) {
           aria-labelledby="contact-title"
         >
           <div className="shell contact-inner">
-            <SectionLabel>{content.contact.eyebrow}</SectionLabel>
-            <Reveal>
-              <h2 id="contact-title">{content.contact.title}</h2>
-              <p>{content.contact.body}</p>
-              <a
-                className="contact-link"
-                href={instagramUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {content.contact.cta}
-                <Arrow />
-              </a>
-              <small>{content.contact.note}</small>
+            <div className="contact-intro">
+              <SectionLabel>{content.contact.eyebrow}</SectionLabel>
+              <Reveal>
+                <h2 id="contact-title">{content.contact.title}</h2>
+                <p>{content.contact.body}</p>
+              </Reveal>
+            </div>
+
+            <div className="contact-criteria">
+              {content.contact.criteria.map((criterion, index) => (
+                <Reveal
+                  className="contact-criterion"
+                  delay={index * 0.04}
+                  key={criterion.index}
+                >
+                  <span>{criterion.index}</span>
+                  <div>
+                    <h3>{criterion.title}</h3>
+                    <p>{criterion.description}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal className="contact-action">
+              <div className="contact-investment">
+                <span>{content.contact.investmentLabel}</span>
+                <strong>{content.contact.investmentValue}</strong>
+                <p>{content.contact.investmentNote}</p>
+              </div>
+              <div className="contact-apply">
+                <a
+                  className="contact-link"
+                  href={projectIntakeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {content.contact.cta}
+                  <Arrow />
+                </a>
+                <small>{content.contact.note}</small>
+              </div>
             </Reveal>
           </div>
         </section>
