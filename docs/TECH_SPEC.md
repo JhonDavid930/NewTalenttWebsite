@@ -14,12 +14,12 @@ flowchart TD
   ES --> SitePage
   SitePage --> Content["Typed bilingual content"]
   SitePage --> Brand["Optimized official brand assets"]
-  SitePage --> External["Instagram and BeFocus links"]
+  SitePage --> External["Instagram, BeFocus and Google Forms links"]
   Metadata["Metadata API"] --> Search["Search engines and social previews"]
   SEO["robots.ts + sitemap.ts + JSON-LD"] --> Search
 ```
 
-La aplicación usa App Router y prerenderiza las dos rutas como HTML estático. El único Client Component contiene la navegación móvil y las animaciones; no consulta servicios externos ni guarda estado persistente.
+La aplicación usa App Router y prerenderiza las dos rutas como HTML estático. El único Client Component contiene la navegación móvil, las animaciones y la visibilidad efímera del CTA de proyectos: aparece después de un scroll significativo y se oculta cuando la sección oficial de solicitud entra en el viewport. No consulta servicios externos durante el render ni guarda estado persistente. La solicitud de proyectos se deriva mediante enlace externo a Google Forms.
 
 ## 3. Stack verificado
 
@@ -70,7 +70,8 @@ Component.
 - Rutas prerenderizadas.
 - Fuentes optimizadas con `next/font`.
 - Assets WebP con dimensiones declaradas.
-- Sin scripts de terceros, embeds, tracking ni video autoplay.
+- Sin scripts de terceros, embeds, tracking ni video autoplay. Google Forms se abre
+  como navegación externa y no se carga dentro del sitio.
 - Motion limitado a `transform` y `opacity`.
 - No se carga contenido remoto durante la navegación.
 
@@ -87,7 +88,10 @@ Component.
 
 ## 9. Seguridad
 
-La V1 no acepta entradas, no usa autenticación y no procesa datos personales. Por tanto, se evita un backend innecesario.
+La V1 no acepta entradas directamente, no usa autenticación y no procesa datos personales en la
+infraestructura de NewTalentt. El intake se realiza en Google Forms y queda sujeto a los controles
+de acceso y privacidad configurados en la cuenta corporativa. Por tanto, se evita un backend
+innecesario en esta fase.
 
 Cabeceras:
 

@@ -81,6 +81,10 @@ export type SiteContent = {
     eyebrow: string;
     title: string;
     body: string;
+    criteria: Array<{ index: string; title: string; description: string }>;
+    investmentLabel: string;
+    investmentValue: string;
+    investmentNote: string;
     cta: string;
     note: string;
   };
@@ -280,12 +284,37 @@ export const englishContent: SiteContent = {
     cta: "Follow @newtalent.t",
   },
   contact: {
-    eyebrow: "Work with us",
-    title: "If the music matters, the strategy should match it.",
+    eyebrow: "Private project intake",
+    title: "The right work starts with the right fit.",
     body:
-      "Tell us what you are building, where it stands and what needs to change. We work privately with a selected number of artists, labels and music projects.",
-    cta: "Start a private conversation",
-    note: "No generic packages. No public intake funnel.",
+      "We work closely with a selected number of artists, labels and music projects. Share the context behind the music so we can understand the ambition, the timing and where NewTalentt can create meaningful leverage.",
+    criteria: [
+      {
+        index: "01",
+        title: "A real project",
+        description:
+          "Music, a catalog or a release plan already in motion — not just an abstract idea.",
+      },
+      {
+        index: "02",
+        title: "A clear ambition",
+        description:
+          "A team ready to make decisions, share context and build beyond isolated promotion.",
+      },
+      {
+        index: "03",
+        title: "A tailored scope",
+        description:
+          "Strategy and execution are shaped around the project. We do not sell generic packages.",
+      },
+    ],
+    investmentLabel: "Campaign engagements",
+    investmentValue: "From $570 USD",
+    investmentNote:
+      "Final scope and investment depend on the project, objectives and channels involved.",
+    cta: "Submit your project brief",
+    note:
+      "Your information is reviewed privately. If there is a strong fit, we will contact you with the next step.",
   },
   footer: {
     positioning: "Strategy. Growth. Technology. Built for music.",
@@ -484,12 +513,37 @@ export const spanishContent: SiteContent = {
     cta: "Seguir @newtalent.t",
   },
   contact: {
-    eyebrow: "Trabaja con nosotros",
-    title: "Si la música importa, la estrategia debe estar a su altura.",
+    eyebrow: "Solicitud privada de proyecto",
+    title: "El trabajo correcto comienza con el encaje correcto.",
     body:
-      "Cuéntanos qué estás construyendo, dónde se encuentra y qué necesita cambiar. Trabajamos de forma privada con un número seleccionado de artistas, sellos y proyectos musicales.",
-    cta: "Iniciar una conversación privada",
-    note: "Sin paquetes genéricos. Sin formularios públicos masivos.",
+      "Trabajamos de cerca con un número seleccionado de artistas, sellos y proyectos musicales. Comparte el contexto detrás de la música para entender la ambición, el momento y dónde NewTalentt puede generar un impacto real.",
+    criteria: [
+      {
+        index: "01",
+        title: "Un proyecto real",
+        description:
+          "Música, catálogo o un plan de lanzamiento ya en movimiento; no solo una idea abstracta.",
+      },
+      {
+        index: "02",
+        title: "Una ambición clara",
+        description:
+          "Un equipo dispuesto a tomar decisiones, compartir contexto y construir más allá de una promoción aislada.",
+      },
+      {
+        index: "03",
+        title: "Un alcance a medida",
+        description:
+          "La estrategia y la ejecución se diseñan alrededor del proyecto. No vendemos paquetes genéricos.",
+      },
+    ],
+    investmentLabel: "Campañas",
+    investmentValue: "Desde $570 USD",
+    investmentNote:
+      "El alcance y la inversión final dependen del proyecto, los objetivos y los canales involucrados.",
+    cta: "Presentar mi proyecto",
+    note:
+      "Tu información se revisa de forma privada. Si existe un buen encaje, te contactaremos con el siguiente paso.",
   },
   footer: {
     positioning: "Strategy. Growth. Technology. Built for music.",

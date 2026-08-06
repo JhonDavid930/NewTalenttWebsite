@@ -60,6 +60,11 @@ Normal text must meet WCAG AA 4.5:1. Decorative marks may use lower opacity only
 - Case study: split editorial composition, not boxed testimonial cards.
 - Selected work: full-width ruled list with type labels.
 - Footer: compact brand close, positioning line and external channels.
+- Private intake: editorial qualification criteria, transparent minimum engagement
+  and one restrained external CTA; never imitate a pricing table or mass lead funnel.
+- Scroll CTA: a compact coral shortcut may appear below the fixed header only after
+  meaningful scroll; it must disappear when the intake section enters the viewport,
+  preserve the full intake CTA and never replace it.
 
 ## Motion
 
