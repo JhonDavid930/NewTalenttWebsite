@@ -6,6 +6,7 @@ V1 oficial de NewTalentt: una landing premium bilingüe para una boutique intern
 
 - V1 implementada y preparada para CI/CD.
 - Rutas disponibles: English `/` y Español `/es`.
+- Publicadas el 07/11/2026: `/control-moviles` y `/control-moviles/privacidad`. El texto de la política de Sheets está en [este documento](docs/CONTROL_MOVILES_PRIVACY_REVIEW.md).
 - Sin backend ni Base de Datos.
 - El Deploy requiere `SITE_URL` y todos los quality gates verdes.
 

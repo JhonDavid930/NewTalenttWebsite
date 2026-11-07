@@ -2,6 +2,8 @@
 
 ## 1. Objetivo
 
+Las rutas estáticas `/control-moviles` y `/control-moviles/privacidad` presentan la herramienta de informes y el tratamiento de datos de su conexión de escritorio con Sheets. No ejecutan OAuth en la web ni reciben credenciales. Reutilizan el sistema visual mediante un Server Component, con metadata y canonical propios. La política debe revisarse y publicarse antes de utilizar su URL en Google Auth Platform.
+
 NewTalentt Website presenta la marca como una boutique privada e internacional de Music Strategy, Growth & Technology. La V1 es una landing de alto rendimiento, bilingüe y sin backend.
 
 ## 2. Arquitectura

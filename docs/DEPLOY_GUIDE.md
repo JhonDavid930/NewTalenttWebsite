@@ -99,6 +99,10 @@ Esto recupera una versión anterior sin borrar el historial.
 
 ## 8. Checklist final
 
+### Páginas de Control de móviles
+
+Antes de publicar la política, revisa `CONTROL_MOVILES_PRIVACY_REVIEW.md` y `CONTROL_MOVILES_REVIEW.md` con el propietario. Ambas páginas deben abrir públicamente por HTTPS y la primera debe enlazar a la política. Añade sus URLs reales en Google Auth Platform solo después del Deploy y la comprobación pública. No se presupone que Google acepte el dominio ni que complete la verificación comercial automáticamente. El estado de publicación se comprueba en Audience; después se solicita una nueva autorización para sustituir el token emitido en Testing.
+
 - Build verde.
 - Dominio con HTTPS.
 - Variable `SITE_URL` correcta en Preview y Production.

@@ -6,3 +6,7 @@ design-system
 docs
 output
 *.log
+tmp
+.env*
+node_modules
+.vercel

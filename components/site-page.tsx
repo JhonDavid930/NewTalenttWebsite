@@ -620,6 +620,9 @@ export function SitePage({ content, locale, siteUrl }: SitePageProps) {
             © {year} {content.footer.rights}
           </span>
           <span>{content.footer.privacy}</span>
+          <Link href="/control-moviles">
+            {locale === "en" ? "Device reports" : "Control de móviles"}
+          </Link>
           <a href={instagramUrl} target="_blank" rel="noreferrer">
             Instagram
             <Arrow />

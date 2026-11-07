@@ -11,6 +11,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
+      url: `${siteUrl}/control-moviles`,
+      lastModified: new Date("2026-11-07T00:00:00Z"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${siteUrl}/control-moviles/privacidad`,
+      lastModified: new Date("2026-11-07T00:00:00Z"),
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
       url: siteUrl,
       lastModified: new Date(),
       changeFrequency: "monthly",

@@ -6,6 +6,10 @@ Todos los cambios relevantes de NewTalentt Website se documentan aquí siguiendo
 
 ### Added
 
+- Deploy `dpl_BCwWPwVvSnyDuBLQ7CMpzWDSU2Yo`: build de Production sin asignación inicial y promoción posterior del mismo artefacto. Verificados ambos endpoints públicos, navegación y política sin desbordamiento horizontal a 375/768/1024/1440. Build, TypeScript, lint y cinco pruebas locales correctos.
+
+- Página de Control de móviles y política específica de la conexión con Google Sheets, aprobadas y publicadas el 07/11/2026. Enlace desde el Footer y rutas en el sitemap.
+
 - CTA flotante bilingüe hacia el formulario de proyectos, visible únicamente después
   de que la persona haya recorrido una parte significativa de la página y oculto al
   entrar en la sección oficial de solicitud para evitar acciones duplicadas.
